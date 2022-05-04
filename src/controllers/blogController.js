@@ -165,7 +165,7 @@ const updateblog = async function (req, res) {
 
         // validation starts 
         if(!isValidObjectId(blogId)){
-            res.status(400).send({status:false , message:'${blogId} is not a valid blog id '})
+            res.status(400).send({status:false , message:`${blogId} is not a valid blog id `})
             return 
         }
         if(!isValidObjectId(authorIdFromToken)){
@@ -261,11 +261,11 @@ const deleteBlog = async function (req, res) {
 
         // validation starts 
         if(!isValidObjectId(blogId)){
-            res.status(400).send({status:false , message:'${blogId} is not a valid blog id '})
+            res.status(400).send({status:false , message:`${blogId} is not a valid blog id `})
             return 
         }
         if(!isValidObjectId(authorIdFromToken)){
-            res.status(400).send({status:false , message:'${authorIdFromToken} is not a valid token id '})
+            res.status(400).send({status:false , message:`${authorIdFromToken} is not a valid token id `})
             return 
         }
         const blog = await blogsModel.findOne({_id: blogId , isDeleted : false , deletedAt : null})
